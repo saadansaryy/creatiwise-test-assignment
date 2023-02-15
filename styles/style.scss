@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@mixin flexCenter($direction,$gap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+#mainHeading {
+    @include flexCenter(column,2rem);
+    margin-top: 6rem;
+    h1 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 70px;
+        line-height: 92px;
+        text-align: center;
+        color: #282828;
+        max-width: 80%;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    p {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 32px;
+        text-align: center;
+        color: rgba(40, 40, 40, 0.7);
+        max-width: 50%;
+    }
+}
+
+#inboxSection{
+    position:relative;
+    overflow: hidden;
+    height: 800px;
+}
+
+#gradientBox {
+    background: linear-gradient(-45deg, #1242df, #32eec2);
+	background-size: 400% 400%;
+	animation: gradient 6s ease-in-out infinite;
+	height: 550px;
+    width: 150vw;
+    border-radius: 24px;
+    rotate: 7deg;
+    margin-top: 5rem;
+    position: absolute;
+    z-index: -1;
+    right: -80px;
+}
+@import "gradientAnimate.scss";
+
+#inbox{
+    @include flexCenter(column,4rem);
+    margin-top: 5rem;
+}
+
+#smallCards{
+    @include flexCenter(column,3rem);
+}
+#bigCards{
+    @include flexCenter(column,4rem);
+    margin-top:2rem;
+    margin-bottom:4rem;
+}
+
+footer{
+    @include flexCenter(column, 1rem );
+    background-color: #2A0896;
+    color: white;
+}
+
